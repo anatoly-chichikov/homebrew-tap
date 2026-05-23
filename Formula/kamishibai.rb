@@ -1,17 +1,13 @@
 class Kamishibai < Formula
   desc "Generate illustrated Anki decks from schema-driven vocabulary JSON"
   homepage "https://github.com/anatoly-chichikov/kamishibai"
-  local_source = "/Users/anatoly/Source/kamishibai/.git"
-  if File.directory?(local_source)
-    url "file://#{local_source}",
-        tag:      "v1.0.0",
-        revision: "1e4c9fecf0a78e29ccf78c5defe7b916c7918204"
+  local_archive = "/Users/anatoly/Source/homebrew-tap/dist/kamishibai-1.0.0.tar.gz"
+  if File.exist?(local_archive)
+    url "file://#{local_archive}"
   else
-    url "https://github.com/anatoly-chichikov/kamishibai.git",
-        tag:      "v1.0.0",
-        revision: "1e4c9fecf0a78e29ccf78c5defe7b916c7918204"
+    url "https://raw.githubusercontent.com/anatoly-chichikov/homebrew-tap/kamishibai-1.0.0/dist/kamishibai-1.0.0.tar.gz"
   end
-  version "1.0.0"
+  sha256 "a8ba56e13f40b4f24c89a8961cc2983758087fe20e98e4b302708ffb01073c06"
   license "Apache-2.0"
 
   depends_on "cmake" => :build
