@@ -7,7 +7,7 @@ class Kamishibai < Formula
   else
     url "https://raw.githubusercontent.com/anatoly-chichikov/homebrew-tap/kamishibai-1.0.0/dist/kamishibai-1.0.0.tar.gz"
   end
-  sha256 "c5f0dc6930cf33132c8615da2e81a6b0fa094d34d8e0e39f5b933f223281f9f8"
+  sha256 "3c2108464618697c635697e6551d80581b954b58004ac437e40b3a48e4d3e2a4"
   license "Apache-2.0"
 
   depends_on "cmake" => :build
