@@ -2,13 +2,8 @@ class Kamishibai < Formula
   desc "Turn a list of words into an illustrated anki deck with native-speaker audio"
   homepage "https://github.com/anatoly-chichikov/kamishibai"
 
-  local_archive = Pathname(__dir__).parent/"dist/kamishibai-1.0.0.tar.gz"
-  if File.exist?(local_archive)
-    url "file://#{local_archive}"
-  else
-    url "https://raw.githubusercontent.com/anatoly-chichikov/homebrew-tap/kamishibai-1.0.0/dist/kamishibai-1.0.0.tar.gz"
-  end
-  sha256 "3c2108464618697c635697e6551d80581b954b58004ac437e40b3a48e4d3e2a4"
+  url "https://github.com/anatoly-chichikov/kamishibai/archive/refs/tags/v1.0.0.tar.gz"
+  sha256 "3384add4d7198dba6cfc4ef943709b1f32c81fe1b80c75fa6660c5a0affb08d0"
   license "Apache-2.0"
 
   bottle do
