@@ -1,5 +1,5 @@
 class Kamishibai < Formula
-  desc "Turn a list of words into an illustrated Anki deck with native-speaker audio"
+  desc "Turn a list of words into an illustrated anki deck with native-speaker audio"
   homepage "https://github.com/anatoly-chichikov/kamishibai"
   local_archive = Pathname(__dir__).parent/"dist/kamishibai-1.0.0.tar.gz"
   if File.exist?(local_archive)
