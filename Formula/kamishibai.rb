@@ -1,5 +1,5 @@
 class Kamishibai < Formula
-  desc "Generate illustrated Anki decks from schema-driven vocabulary JSON"
+  desc "Turn a list of words into an illustrated Anki deck with native-speaker audio"
   homepage "https://github.com/anatoly-chichikov/kamishibai"
   local_archive = "/Users/anatoly/Source/homebrew-tap/dist/kamishibai-1.0.0.tar.gz"
   if File.exist?(local_archive)
@@ -7,7 +7,7 @@ class Kamishibai < Formula
   else
     url "https://raw.githubusercontent.com/anatoly-chichikov/homebrew-tap/kamishibai-1.0.0/dist/kamishibai-1.0.0.tar.gz"
   end
-  sha256 "a8ba56e13f40b4f24c89a8961cc2983758087fe20e98e4b302708ffb01073c06"
+  sha256 "56db66dbb4b2d120d618950c1defee6617c510ae33c0cc846990cb3d2b11f3ec"
   license "Apache-2.0"
 
   depends_on "cmake" => :build

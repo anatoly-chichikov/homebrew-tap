@@ -26,9 +26,9 @@ brew "kamishibai"
 
 ### kamishibai
 
-Kamishibai turns vocabulary into illustrated Anki decks and PDF reports.
+kamishibai turns a list of words you want to learn into an illustrated Anki deck plus a printable PDF. Each card has a sentence in your language, the same sentence in the target one, native-speaker audio, and an illustration.
 
-Set `GEMINI_API_KEY` before running it, or enter the key in the welcome screen. The first OCR-backed run downloads PP-OCRv5 model files into the application cache.
+Set `GEMINI_API_KEY` before running, or paste the key on the welcome screen.
 
 ## Documentation
 
