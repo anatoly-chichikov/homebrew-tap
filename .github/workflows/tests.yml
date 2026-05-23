@@ -41,7 +41,6 @@ jobs:
       matrix:
         os:
           - macos-15
-          - macos-15-intel
     runs-on: ${{ matrix.os }}
     permissions:
       actions: read
@@ -77,3 +76,4 @@ jobs:
         with:
           name: bottles_${{ matrix.os }}
           path: '*.bottle.*'
+          if-no-files-found: error
