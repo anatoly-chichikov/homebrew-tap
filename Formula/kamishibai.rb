@@ -13,8 +13,9 @@ class Kamishibai < Formula
 
   bottle do
     root_url "https://github.com/anatoly-chichikov/homebrew-tap/releases/download/kamishibai-1.0.0"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3812139c13a958426a527f2e5b78af7669bf947b05337ba09ac0ca3aaff97328"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fde0e704365d3a3c7a458e0da4f8b623b2fb25c2060a9f8a7fb2074533965add"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0650c3de33c1b1f4ea16af76c0a0418c1a1d6fe0893d3dafb13c6192084d96d"
   end
 
   depends_on "cmake" => :build
