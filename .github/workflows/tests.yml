@@ -40,6 +40,7 @@ jobs:
       fail-fast: false
       matrix:
         os:
+          - ubuntu-24.04
           - macos-15
     runs-on: ${{ matrix.os }}
     permissions:
@@ -50,6 +51,7 @@ jobs:
     env:
       HOMEBREW_NO_INSTALL_CLEANUP: 1
       HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK: 1
+      HOMEBREW_NO_SANDBOX_LINUX: 1
     steps:
       - name: Set up Homebrew
         id: set-up-homebrew
@@ -71,7 +73,7 @@ jobs:
       - run: brew test-bot --only-formulae
 
       - name: Upload bottles as artifact
-        if: always()
+        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: bottles_${{ matrix.os }}
