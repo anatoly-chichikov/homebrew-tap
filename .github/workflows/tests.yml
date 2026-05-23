@@ -41,6 +41,7 @@ jobs:
       matrix:
         os:
           - ubuntu-24.04
+          - ubuntu-24.04-arm
           - macos-15
     runs-on: ${{ matrix.os }}
     permissions:
@@ -70,7 +71,7 @@ jobs:
 
       - run: brew test-bot --only-setup
 
-      - run: brew test-bot --only-formulae
+      - run: brew test-bot --only-formulae --testing-formulae=kamishibai
 
       - name: Upload bottles as artifact
         if: success()
