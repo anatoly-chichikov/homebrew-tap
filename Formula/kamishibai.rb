@@ -1,7 +1,7 @@
 class Kamishibai < Formula
   desc "Turn a list of words into an illustrated Anki deck with native-speaker audio"
   homepage "https://github.com/anatoly-chichikov/kamishibai"
-  local_archive = "/Users/anatoly/Source/homebrew-tap/dist/kamishibai-1.0.0.tar.gz"
+  local_archive = Pathname(__dir__).parent/"dist/kamishibai-1.0.0.tar.gz"
   if File.exist?(local_archive)
     url "file://#{local_archive}"
   else
@@ -14,6 +14,8 @@ class Kamishibai < Formula
   depends_on "llvm" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
+
+  depends_on :macos
 
   resource "mnn-prebuilt" do
     url "https://github.com/zibo-chen/MNN-Prebuilds/releases/download/dev/mnn-dev-macos-universal.tar.gz"
