@@ -1,28 +1,21 @@
 # homebrew-tap
 
-Homebrew tap for personal projects and command-line tools.
+Homebrew tap for my personal projects and command-line tools.
 
-## Install
+## Usage
 
-```sh
-brew install anatoly-chichikov/tap/kamishibai
-```
-
-Or tap once:
+Tap the repository once:
 
 ```sh
 brew tap anatoly-chichikov/tap
-brew install kamishibai
 ```
 
-Or, in a `brew bundle` `Brewfile`:
+Then install a formula:
 
-```ruby
-tap "anatoly-chichikov/tap"
-brew "kamishibai"
+```sh
+brew install kamishibai
 ```
 
 ## Formulae
 
-- `kamishibai` — turn a list of words into an illustrated anki deck with native-speaker audio and a printable PDF
-  Repository: <https://github.com/anatoly-chichikov/kamishibai>
+- [`kamishibai`](https://github.com/anatoly-chichikov/kamishibai) — turn a list of words into an illustrated anki deck with native-speaker audio and a printable PDF
