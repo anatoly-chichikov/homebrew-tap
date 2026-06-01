@@ -31,6 +31,7 @@ jobs:
           restore-keys: ubuntu-rubygems-
 
       - run: brew test-bot --only-cleanup-before
+      - run: brew trust --formula anatoly-chichikov/tap/kamishibai
       - run: brew test-bot --only-setup
       - run: brew test-bot --only-tap-syntax
 
@@ -68,6 +69,8 @@ jobs:
           restore-keys: ${{ matrix.os }}-rubygems-
 
       - run: brew test-bot --only-cleanup-before
+
+      - run: brew trust --formula anatoly-chichikov/tap/kamishibai
 
       - run: brew test-bot --only-setup
 
