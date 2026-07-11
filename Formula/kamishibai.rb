@@ -2,16 +2,9 @@ class Kamishibai < Formula
   desc "Turn a list of words into an illustrated anki deck with native-speaker audio"
   homepage "https://github.com/anatoly-chichikov/kamishibai"
 
-  url "https://github.com/anatoly-chichikov/kamishibai/archive/refs/tags/v1.4.1.tar.gz"
-  sha256 "87c3ddaa34acc8a4c22a08da621072daa696abd072ebda11fe5f7bfb7e1a51a2"
+  url "https://github.com/anatoly-chichikov/kamishibai/archive/refs/tags/v1.4.2.tar.gz"
+  sha256 "5fb30c500133d89e0b997489743796c900d721fd680509ced2706c563d1f43be"
   license "Apache-2.0"
-
-  bottle do
-    root_url "https://github.com/anatoly-chichikov/homebrew-tap/releases/download/kamishibai-1.4.1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4aef8228a56cb1ff243e50053eddcaff2a5eea54b0f1c193621177a83ffe8732"
-    sha256 cellar: :any,                 arm64_linux:   "d5adb6d0dc7542db7ad2effb77302474a70dbc889eb3600d3d7e884dbd10a4c8"
-    sha256 cellar: :any,                 x86_64_linux:  "862e397c51bc2f903bc225fbb3be7fe462db745737297c7af16818388232b7c7"
-  end
 
   depends_on "cmake" => :build
   depends_on "llvm" => :build
@@ -33,7 +26,7 @@ class Kamishibai < Formula
 
   def install
     ENV["CARGO_HOME"] = buildpath/".cargo"
-    ENV["LIBCLANG_PATH"] = Formula["llvm"].opt_lib.to_s
+    ENV["LIBCLANG_PATH"] = formula_opt_lib("llvm").to_s
     system "cargo", "fetch", "--locked"
     ocr_source = Pathname(Dir[buildpath/".cargo/registry/src/*/ocr-rs-2.2.2"].fetch(0))
     mkdir_p ocr_source/"3rd_party/prebuilt"
@@ -42,6 +35,6 @@ class Kamishibai < Formula
   end
 
   test do
-    assert_equal "kamishibai 1.4.1", shell_output("#{bin}/kamishibai --version").strip
+    assert_equal "kamishibai 1.4.2", shell_output("#{bin}/kamishibai --version").strip
   end
 end
