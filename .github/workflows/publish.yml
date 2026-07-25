@@ -49,6 +49,8 @@ jobs:
           branch="$(gh pr view "$PULL_REQUEST" --repo "$GITHUB_REPOSITORY" \
             --json headRefName,isCrossRepository \
             --jq 'select(.isCrossRepository == false) | .headRefName')"
+          # brew pr-pull names the bottle release tag after the branch, so an
+          # unqualified refspec matches both and git refuses to delete either.
           if [[ -n "$branch" ]] && git ls-remote --exit-code --heads origin "refs/heads/$branch"; then
-            git push --delete origin "$branch"
+            git push --delete origin "refs/heads/$branch"
           fi
