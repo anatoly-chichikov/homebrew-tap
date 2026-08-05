@@ -2,16 +2,9 @@ class Kamishibai < Formula
   desc "Turn a list of words into an illustrated anki deck with native-speaker audio"
   homepage "https://github.com/anatoly-chichikov/kamishibai"
 
-  url "https://github.com/anatoly-chichikov/kamishibai/archive/refs/tags/v1.6.1.tar.gz"
-  sha256 "8f997bbab06d08c5a21786a00c9e75b0d0dcd236f6d1e78adac15cadc01d30bc"
+  url "https://github.com/anatoly-chichikov/kamishibai/archive/refs/tags/v1.7.0.tar.gz"
+  sha256 "0fa8a1aecdc59a4f1d2ebe0bdc4e6fcf1f1f193ad0611948d45a9e26f7b07cd8"
   license "Apache-2.0"
-
-  bottle do
-    root_url "https://github.com/anatoly-chichikov/homebrew-tap/releases/download/kamishibai-1.6.1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "22fc13a11c3056a87c887cd3205c41c4724cd0eda51563478fe0174a5c18d068"
-    sha256 cellar: :any,                 arm64_linux:   "a432824c15251d75abf9d8b82e733390387ba58cd563746807c9d3e0cc580aa8"
-    sha256 cellar: :any,                 x86_64_linux:  "1b0a40217c3a1f9cf494d88953d0ae391662997de04dfbe5413da3be0e0e0786"
-  end
 
   depends_on "cmake" => :build
   depends_on "llvm" => :build
@@ -42,6 +35,6 @@ class Kamishibai < Formula
   end
 
   test do
-    assert_equal "kamishibai 1.6.1", shell_output("#{bin}/kamishibai --version").strip
+    assert_equal "kamishibai 1.7.0", shell_output("#{bin}/kamishibai --version").strip
   end
 end
