@@ -6,6 +6,13 @@ class Kamishibai < Formula
   sha256 "b0746f77002ebbee3ab17c008be4a614857ed5e4365434ed5e6ff05bcc6d85a6"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/anatoly-chichikov/homebrew-tap/releases/download/kamishibai-1.7.2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b862ba4483369d6adb1c54fcce067491f774c702cc0fd0870a3cf45d58f666e9"
+    sha256 cellar: :any,                 arm64_linux:   "33b7df9a41c8c2ae8da4b37de46133d12e25aa770522033157bce6e9065ca383"
+    sha256 cellar: :any,                 x86_64_linux:  "80fae1f07685d7d95c4ecc115ed878a235f97abaf11265face36216189cc1307"
+  end
+
   depends_on "cmake" => :build
   depends_on "llvm" => :build
   depends_on "pkgconf" => :build
